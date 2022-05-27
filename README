@@ -1,0 +1,41 @@
+DoodleJump README
+
+Overview:
+
+    Our DoodleJump has 10 classes: App, PaneOrganizer, Game, Doodle, ScoreLabel, PlatformHandler, Platform,
+    MovingPlatform, DisappearingPlatform, and BouncyPlatform, which interact in the following ways:
+
+     - App is in charge of starting the program and creating a stage for it to appear on.
+     - PaneOrganizer is a top-level class contained by App and is a top-level class for overarching graphical
+     information of the program.
+     - Game is contained by PaneOrganizer and is the top-level class in charge of graphical animation responsibility
+     and all top-level logic.
+     - Doodle and ScoreLabel are both contained by Game, and simulate a doodle that the user can control with key input
+     and a score label that appears on the game pane that updates depending on user interaction with the doodle and the
+     rest of the program.
+     - PlatformHandler is also contained by Game, and is in charge of controlling and managing each of the Platforms
+     and how they react to the doodle. PlatformHandler contains most of the logic for what happens to each of the four
+     types of platforms, while the Platform class contains the logic for a platform on an individual scale.
+     - Platform, MovingPlatform, DisappearingPlatform, and BouncyPlatform are all contained by PlatformHandler, and each
+     outline a slightly different way that the platform and the doodle interact. Because of this, all of the platform
+     classes (including PlatformHandler) are associated with the Doodle class.
+
+Design Choices:
+
+    Platform is a wrapper class for a Rectangle because it allows the graphical elements of a Rectangle to appear, while
+    also modifying it to be constructed in a uniform way and perform methods specific to DoodleJump. Our project uses
+    inheritance for the four types of platforms. MovingPlatform, DisappearingPlatform, and BouncyPlatform are all
+    subclasses of the Platform superclass. This is because the properties of Platform are the same for all four types
+    of platforms, but each subclass has slightly different modifications and different ways that the doodle reacts
+    when it intersects with each of them. Because there is so much interaction between the doodle and the platforms,
+    setter and getter methods are used to both simplify the code and allow the access of information across different
+    classes. Each of the platforms are stored in an ArrayList because the number of platforms on the screen is dynamic.
+
+Known Bugs: There are no known bugs in this project.
+
+Debugging Collaborators: N/A
+
+
+
+
+
